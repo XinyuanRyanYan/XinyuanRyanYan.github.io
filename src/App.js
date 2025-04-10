@@ -231,6 +231,10 @@ function App() {
       <SeparationLine></SeparationLine>
       <div style={{height: '15px'}}></div>
 
+      
+      <Typography variant="body1" gutterBottom >
+       Guest Lecturer, CS 3090: Ethics in Computing, 2025 Spring, University of Utah, lectured by Prof. Noelle Brown.
+      </Typography>
       <Typography variant="body1" gutterBottom >
         TA, CS 3960 Algorithm Fairness in Machine Learning, 2023 Spring, University of Utah, lectured by Prof. Bei Wang Philips.
       </Typography>
