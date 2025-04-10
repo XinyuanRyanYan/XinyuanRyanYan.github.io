@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.7bbe2206.css",
-    "main.js": "/static/js/main.e4fa71ed.js",
+    "main.js": "/static/js/main.e6bbaa9b.js",
     "static/media/Xinyuan.JPG": "/static/media/Xinyuan.30b25110df7e190ec307.JPG",
     "index.html": "/index.html",
     "main.7bbe2206.css.map": "/static/css/main.7bbe2206.css.map",
-    "main.e4fa71ed.js.map": "/static/js/main.e4fa71ed.js.map"
+    "main.e6bbaa9b.js.map": "/static/js/main.e6bbaa9b.js.map"
   },
   "entrypoints": [
     "static/css/main.7bbe2206.css",
-    "static/js/main.e4fa71ed.js"
+    "static/js/main.e6bbaa9b.js"
   ]
 }
