@@ -32,7 +32,7 @@ function SeparationLine() {
 const pub_lst = [
   {
     'title': 'VISLIX: An XAI Framework for Validating Vision Models with Slice Discovery and Analysis.',
-    'authors': ['Xinyuan Yan', 'Xiwei Xuan', 'Jorge H Piazentin Ono', 'Jiajing Guo', 'Vikram Mohanty', 'Shekar Arvind Kumar', 'Liang Gou', 'Bei Wang', 'Liu Ren'],
+    'authors': ['Xinyuan Yan', 'Xiwei Xuan', 'Jorge Piazentin Ono', 'Jiajing Guo', 'Vikram Mohanty', 'Shekar Arvind Kumar', 'Liang Gou', 'Bei Wang', 'Liu Ren'],
     'place': 'Eurographics Conference on Visualization (EuroVis), 2025',
     'link': ''
   },
@@ -86,7 +86,7 @@ const poster_lst = [
 function App() { 
 
   return (
-    <Box sx={{ width: '100%', maxWidth: 800 }}> 
+    <Box sx={{ width: '100%', maxWidth: 900 }}> 
       <Typography variant="h3" gutterBottom sx={{fontWeight: 200}}>
         Xinyuan Yan
       </Typography>
