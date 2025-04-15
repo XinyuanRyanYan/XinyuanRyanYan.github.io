@@ -34,31 +34,35 @@ const pub_lst = [
     'title': 'VISLIX: An XAI Framework for Validating Vision Models with Slice Discovery and Analysis.',
     'authors': ['Xinyuan Yan', 'Xiwei Xuan', 'Jorge Piazentin Ono', 'Jiajing Guo', 'Vikram Mohanty', 'Shekar Arvind Kumar', 'Liang Gou', 'Bei Wang', 'Liu Ren'],
     'place': 'Eurographics Conference on Visualization (EuroVis), 2025',
-    'link': ''
   },
   {
     'title': 'Flexible Topology Tracking with Partial Optimal Transport.',
     'authors': ['Mingzhe Li', 'Xinyuan Yan', 'Lin Yan', 'Tom Needham', 'Bei Wang'],
     'place': 'IEEE Transactions on Visualization and Computer Graphics (TVCG), 2025',
-    'link': 'https://arxiv.org/pdf/2302.02895'
+    'link': 'https://arxiv.org/pdf/2302.02895',
+    'code': 'https://github.com/tdavislab/GWMT'
   },
   {
     'title': 'EulerMerge: Simplifying Euler Diagrams Through Set Merges.',
     'authors': ['Xinyuan Yan', 'Peter Rodgers', 'Peter Rottmann', 'Daniel Archambault', 'Jan-Henrik Haunert', 'Bei Wang'],
     'place': 'International Conference on the Theory and Application of Diagrams (DIAGRAMS), 2024.',
-    'link': 'https://www.sci.utah.edu/~beiwang/publications/EulerMerge_BeiWang_2024.pdf'
+    'link': 'https://www.sci.utah.edu/~beiwang/publications/EulerMerge_BeiWang_2024.pdf',
+    'code': 'https://github.com/tdavislab/EulerMerge',
+    'arXiv': 'https://arxiv.org/pdf/2311.15396'
+  },
+  {
+    'title': 'Exploring Visualization for Fairness in AI Education.',
+    'authors': ['Xinyuan Yan', 'Youjia Zhou', 'Arul Mishra', 'Himanshu Mishra', 'Bei Wang'],
+    'place': 'IEEE Pacific Visualization Conference (PacificVis), 2024.',
+    'link': 'https://www.sci.utah.edu/~beiwang/publications/Fairness_BeiWang_2024.pdf',
+    'supplement': 'https://www.sci.utah.edu/~beiwang/publications/Fairness_BeiWang_2024_Supplement.pdf',
+    'code': 'https://github.com/tdavislab/FairAI-Education-VisTool'
   },
   {
     'title': 'Generating Euler Diagrams Through Combinatorial Optimization.',
     'authors': ['Peter Rottmann', 'Peter Rodgers', 'Xinyuan Yan', 'Daniel Archambault', 'Bei Wang', 'Jan-Henrik Haunert'],
     'place': 'Eurographics Conference on Visualization (EuroVis), 2024.',
     'link': 'https://www.sci.utah.edu/~beiwang/publications/Euler_optimize_BeiWang_2024.pdf'
-  },
-  {
-    'title': 'Exploring Visualization for Fairness in AI Education.',
-    'authors': ['Xinyuan Yan', 'Youjia Zhou', 'Arul Mishra', 'Himanshu Mishra', 'Bei Wang'],
-    'place': 'IEEE Pacific Visualization Conference (PacificVis), 2024.',
-    'link': 'https://www.sci.utah.edu/~beiwang/publications/Fairness_BeiWang_2024.pdf'
   },
   {
     'title': 'Enable Decision Making for Battery Electric Bus Deployment Using Robust High-Resolution Interdependent Visualization.',
@@ -145,9 +149,9 @@ function App() {
             return(
               <div className='paperslot'>
               <Typography variant="subtitle1">
-                {paper['title']}  <Link sx={{fontWeight: 200}} href={paper['link']}>[pdf]</Link>
+                {paper['title']}
               </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[600]}}>
+              <Typography variant="body1" sx={{fontWeight: 300, color: grey[600], fontSize: '0.9em'}}>
                 {paper['authors'].map((name, index)=>(
                   <span key={index}>
                   <span style={{ fontWeight: name === 'Xinyuan Yan' ? '500' : '300',
@@ -159,8 +163,14 @@ function App() {
               </span>
                 ))}
               </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[800]}}>
+              <Typography variant="body1" sx={{fontWeight: 300, color: grey[800], fontSize: '0.9em', fontStyle: 'italic'}} >
                 {paper['place']}
+              </Typography>
+              <Typography variant="body1" sx={{ fontWeight: 300, color: grey[800], fontSize: '0.8em' }}>
+                {paper['link'] && <Link sx={{ fontWeight: 200 }} href={paper['link']}>paper</Link>}
+                {paper['supplement'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['supplement']}>supplement</Link></span>}
+                {paper['arXiv'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['arXiv']}>arXiv</Link></span>}
+                {paper['code'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['code']}>code</Link></span>} 
               </Typography>
               </div>
             )
@@ -180,10 +190,10 @@ function App() {
           poster_lst.map((paper, index)=>{
             return(
               <div className='paperslot'>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1"> 
                 {paper['title']}  <Link sx={{fontWeight: 200}} href={paper['link']}>[pdf]</Link>
               </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[600]}}>
+              <Typography variant="body1" sx={{fontWeight: 300, color: grey[600], fontSize: '0.9em'}}>
                 {paper['authors'].map((name, index)=>(
                   <span key={index}>
                   <span style={{ fontWeight: name === 'Xinyuan Yan' ? '500' : '300',
@@ -195,7 +205,7 @@ function App() {
               </span>
                 ))}
               </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[800]}}>
+              <Typography variant="body1" sx={{fontWeight: 300, color: grey[800], fontSize: '0.9em', fontStyle: 'italic'}} >
                 {paper['place']}
                 {paper['award'] && <span style={{fontWeight: 400, color:orange[500]}}>{` ${paper['award']}`}</span>}
               </Typography>
