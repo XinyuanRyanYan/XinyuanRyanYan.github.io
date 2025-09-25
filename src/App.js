@@ -6,13 +6,33 @@ import Typography from '@mui/material/Typography';
 import myPhoto from './Xinyuan.JPG'; // Adjust the path as necessary
 import { grey, orange } from '@mui/material/colors';
 import Link from '@mui/material/Link';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'EB Garamond, serif',
+    fontStyle: 'italic',
+  },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#1a7e80', // Replace with your desired color
+            textDecoration: 'none', // Add underline
+            // textDecorationColor: '#1a7e80', // Keep the color the same
+          '&:hover': {
+            textDecoration: 'underline', // Optional: Add underline on hover
+          },
+        },
+      },
+    },
+  },
+});
 
 function StyledLinks(props) {
   return (
     <Link
-      underline='none'
-      sx={{
-      }}
+      textDecoration='none'
       {...props}
     />
   );
@@ -31,15 +51,23 @@ function SeparationLine() {
 
 const pub_lst = [
   {
+    'title': 'Visual Exploration of Feature Relationships in Sparse Autoencoders with Curated Concepts',
+    'authors': ['Xinyuan Yan', 'Kowshik Thopalli', 'Shusen Liu', 'Bei Wang'],
+    'place': 'Mechanistic Interpretability Workshop at NeurIPS 2025'
+  },
+  {
     'title': 'VISLIX: An XAI Framework for Validating Vision Models with Slice Discovery and Analysis.',
     'authors': ['Xinyuan Yan', 'Xiwei Xuan', 'Jorge Piazentin Ono', 'Jiajing Guo', 'Vikram Mohanty', 'Shekar Arvind Kumar', 'Liang Gou', 'Bei Wang', 'Liu Ren'],
     'place': 'Eurographics Conference on Visualization (EuroVis), 2025',
+    'link': 'https://www.sci.utah.edu/~beiwang/publications/VISLIX_BeiWang_2025.pdf',
+    'supplement': 'https://www.sci.utah.edu/~beiwang/publications/VISLIX_Supplement_BeiWang_2025.pdf',
+    'video': 'https://www.sci.utah.edu/~beiwang/publications/videos/VISLIX-Video.mp4',
   },
   {
     'title': 'Flexible Topology Tracking with Partial Optimal Transport.',
     'authors': ['Mingzhe Li', 'Xinyuan Yan', 'Lin Yan', 'Tom Needham', 'Bei Wang'],
     'place': 'IEEE Transactions on Visualization and Computer Graphics (TVCG), 2025',
-    'link': 'https://arxiv.org/pdf/2302.02895',
+    'link': 'https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10965933',
     'code': 'https://github.com/tdavislab/GWMT'
   },
   {
@@ -76,7 +104,8 @@ const poster_lst = [
   {'title': 'Turing Galaxy: Visualizing Turing Award Laureates',
     'authors': ['Xinyuan Yan', 'Yifang Ma'],
     'place': 'IEEE VIS 2021',
-    'link': 'https://ieeevis.b-cdn.net/vis_2021/posters/v-vis-posters-1044-summary.pdf'
+    'link': 'https://ieeevis.b-cdn.net/vis_2021/posters/v-vis-posters-1044-summary.pdf',
+    'poster': 'https://ieeevis.b-cdn.net/vis_2021/posters/v-vis-posters-1044.pdf'
   },
   {'title': 'Elastic Tree Layouts for Interactive Exploration of Mentorship',
     'authors': ['Xinyuan Yan', 'Yifang Ma'],
@@ -90,169 +119,178 @@ const poster_lst = [
 function App() { 
 
   return (
-    <Box sx={{ width: '100%', maxWidth: 900 }}> 
-      <Typography variant="h3" gutterBottom sx={{fontWeight: 200}}>
-        Xinyuan Yan
-      </Typography>
-      <SeparationLine></SeparationLine>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ width: '100%', maxWidth: 900 }}> 
+        <Typography variant="h3" gutterBottom sx={{fontWeight: 200, fontSize: '2.7em'}}>
+          Xinyuan Yan
+        </Typography>
+        <SeparationLine></SeparationLine>
 
-      <div id='intro-image-div'>
+        <div id='intro-image-div'>
+          <div>
+          <Typography variant="body1" gutterBottom sx={{fontWeight: 300, fontSize: '1.15em'}}>
+          Hello! I’m Xinyuan Yan (闫心愿), a fifth-year PhD student at the <Link href={"https://www.sci.utah.edu/"}>SCI Institute</Link>, University of Utah, 
+          advised by <Link href={"https://www.sci.utah.edu/~beiwang/"}>Prof. Bei Wang Phillips</Link>. 
+          My research interests focus on the fairness, explainability, and interpretability of AI models.
+          I develop human-centered visual analytics and topology-driven methods to explain, validate, and explore AI systems across domains, aiming to foster responsible and interpretable AI.
+          I also conduct research around hypergraph visualization.
+          </Typography>
+
+          <Typography variant="body1" sx={{fontWeight: 300, fontFamily: 'EB Garamond', fontSize: '1.15em'}}>
+          Before pursuing my PhD, I obtained my bachelor's degree in Computer Science from Shandong University in 2019. 
+          Outside of research, I enjoy reading and watching movies. My recently favorite book is <em>On the Move: A Life</em> by Oliver Sacks.
+          </Typography>
+
+          <Typography variant="body2" sx={{fontWeight: 400, paddingTop: '10px'}}>
+          <StyledLinks sx={{fontWeight: 200, margin: '0 10px 0 0', fontSize: '1.15em'}} href='https://scholar.google.com/citations?user=zVBCLa8AAAAJ&hl=en'>Google Scholar</StyledLinks> | 
+          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='https://github.com/XinyuanRyanYan'>Github</StyledLinks> |
+          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='https://www.linkedin.com/in/xinyuan-yan-990b681b9/'>LinkedIn</StyledLinks> |
+          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='mailto:xyan@cs.utah.edu'>Email</StyledLinks>
+          </Typography>
+          </div>
+
+          <div>
+            <img 
+              src={myPhoto} 
+              alt="Xinyuan Yan" 
+              style={{ width: '170px', borderRadius: '50%' , border: '2px solid #e9e8e4'}} // Adjust the size and style as needed #e9e8e4
+            />
+            </div>
+        </div>
+
+        {/* <div className='subsection'>
+        <Typography variant="h4" gutterBottom sx={{fontWeight: 300}}>
+          News
+        </Typography>
+        <Typography variant="subtitle1" gutterBottom sx={{color: grey[600]}}>
+          [To be announced]
+        </Typography>
+        </div> */}
+
+        {/* The PUBLICATIONS  */}
+        <div className='subsection'>
+        <Typography variant="h5" gutterBottom sx={{fontWeight:200}}>
+          Selected Publications
+        </Typography>
+        <SeparationLine></SeparationLine>
         <div>
-        <Typography variant="body1" gutterBottom sx={{fontWeight: 300}}>
-        Hello! I’m Xinyuan Yan (闫心愿), a fourth-year PhD student at the <Link href={"https://www.sci.utah.edu/"}>SCI Institute</Link>, University of Utah, 
-        advised by <Link href={"https://www.sci.utah.edu/~beiwang/"}>Prof. Bei Wang Phillips</Link>. 
-        My research interests focus on the fairness, biases, and interpretation of AI models. 
-        I aim to advance this field through visual analytics and topological data analysis. 
-        I also conduct research around hypergraph visualization.
-        </Typography>
+        {
+            pub_lst.map((paper)=>{
+              return(
+                <div className='paperslot'>
+                <Typography variant="subtitle1" sx={{fontSize: '1.15em'}}>
+                  {paper['title']}
+                </Typography>
+                <Typography variant="body1" sx={{fontWeight: 300, color: grey[600]}}>
+                  {paper['authors'].map((name, index)=>(
+                    <span key={index}>
+                    <span style={{ fontWeight: name === 'Xinyuan Yan' ? '500' : '300',
+                      color: name === 'Xinyuan Yan' ?  grey[800]: grey[600]
+                    }}>
+                      {name}
+                    </span>
+                  {index !== paper['authors'].length - 1 && ', '}
+                </span>
+                  ))}
+                </Typography>
+                <Typography variant="body1" sx={{fontWeight: 300, color: grey[800], fontStyle: 'italic'}} >
+                  {paper['place']}ç
+                </Typography>
+                <Typography variant="body1" sx={{ fontWeight: 300, color: grey[800], fontSize: '0.9em' }}>
+                  {paper['link'] && <Link sx={{ fontWeight: 200 }} href={paper['link']}>paper</Link>}
+                  {paper['supplement'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['supplement']}>supplement</Link></span>}
+                  {paper['arXiv'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['arXiv']}>arXiv</Link></span>}
+                  {paper['video'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['video']}>video</Link></span>}
+                  {paper['code'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['code']}>code</Link></span>} 
+                </Typography>
+                </div>
+              )
+            })
+          }
+        </div>
+        </div>
 
-        <Typography variant="body1" sx={{fontWeight: 300}}>
-        Before pursuing my PhD, I obtained my bachelor's degree in Computer Science from Shandong University in 2019. 
-        Beyond doing academic research, I like reading and cooking!
+        {/* The POSTERS  */}
+        <div className='subsection'>
+        <Typography variant="h5" gutterBottom sx={{fontWeight:200}}>
+          Posters
         </Typography>
+        <SeparationLine></SeparationLine>
+        <div>
+        {
+            poster_lst.map((paper, index)=>{
+              return(
+                <div className='paperslot'>
+                <Typography variant="subtitle1" sx={{fontSize: '1.15em'}}> 
+                  {paper['title']}  
+                  <Link sx={{fontWeight: 200}} href={paper['link']}>[pdf]</Link>
+                  {paper['poster']&&<Link sx={{fontWeight: 200}} href={paper['poster']}>[poster]</Link>}
+                </Typography>
+                <Typography variant="body1" sx={{fontWeight: 300, color: grey[600]}}>
+                  {paper['authors'].map((name, index)=>(
+                    <span key={index}>
+                    <span style={{ fontWeight: name === 'Xinyuan Yan' ? '500' : '300',
+                      color: name === 'Xinyuan Yan' ?  grey[800]: grey[600]
+                    }}>
+                      {name}
+                    </span>
+                  {index !== paper['authors'].length - 1 && ', '}
+                </span>
+                  ))}
+                </Typography>
+                <Typography variant="body1" sx={{fontWeight: 300, color: grey[800], fontStyle: 'italic'}} >
+                  {paper['place']}
+                  {paper['award'] && <span style={{fontWeight: 600, color:'#e2931f'}}>{` ${paper['award']}`}</span>}
+                </Typography>
+                </div>
+              )
+            })
+          }
+        </div>
+        </div>
 
-        <Typography variant="body2" sx={{fontWeight: 400, paddingTop: '10px'}}>
-        <StyledLinks sx={{fontWeight: 200, margin: '0 10px 0 0'}} href='https://scholar.google.com/citations?user=zVBCLa8AAAAJ&hl=en'>Google Scholar</StyledLinks> | 
-        <StyledLinks sx={{fontWeight: 200, margin: '0 10px'}} href='https://github.com/XinyuanRyanYan'>Github</StyledLinks> |
-        <StyledLinks sx={{fontWeight: 200, margin: '0 10px'}} href='https://www.linkedin.com/in/xinyuan-yan-990b681b9/'>LinkedIn</StyledLinks> |
-        <StyledLinks sx={{fontWeight: 200, margin: '0 10px'}} href='mailto:xyan@cs.utah.edu'>Email</StyledLinks>
+        <div className='subsection'>
+        <Typography variant="h5" gutterBottom sx={{fontWeight: 200}}>
+          Professional Experiences
+        </Typography> 
+        <SeparationLine></SeparationLine>
+        <div style={{height: '15px'}}></div>
+
+
+        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        Research Assistant, SCI Institute, University of Utah  						 
+        <span style={{marginLeft: '30px'}}>01/2022 – present</span>
+        </Typography>
+        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        Visiting Student, IVIA Lab, ETH Zurich, Switzerland
+        <span style={{marginLeft: '30px'}}>08/2025 – 09/2025 </span>
+        </Typography>
+        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        Research Intern, Bosch Research, Sunnyvale, California, United States  
+        <span style={{marginLeft: '30px'}}>05/2023 – 08/2023 </span>
         </Typography>
         </div>
 
-        <div>
-          <img 
-            src={myPhoto} 
-            alt="Xinyuan Yan" 
-            style={{ width: '170px', borderRadius: '50%' }} // Adjust the size and style as needed
-          />
-          </div>
-      </div>
+        <div className='subsection'> 
+        <Typography variant="h5" gutterBottom sx={{fontWeight: 200}}>
+          Teaching
+        </Typography>
+        <SeparationLine></SeparationLine>
+        <div style={{height: '15px'}}></div>
 
-      {/* <div className='subsection'>
-      <Typography variant="h4" gutterBottom sx={{fontWeight: 300}}>
-        News
-      </Typography>
-      <Typography variant="subtitle1" gutterBottom sx={{color: grey[600]}}>
-        [To be announced]
-      </Typography>
-      </div> */}
-
-      {/* The PUBLICATIONS  */}
-      <div className='subsection'>
-      <Typography variant="h5" gutterBottom sx={{fontWeight:200}}>
-        Selected Publications
-      </Typography>
-      <SeparationLine></SeparationLine>
-      <div>
-      {
-          pub_lst.map((paper)=>{
-            return(
-              <div className='paperslot'>
-              <Typography variant="subtitle1">
-                {paper['title']}
-              </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[600], fontSize: '0.9em'}}>
-                {paper['authors'].map((name, index)=>(
-                  <span key={index}>
-                  <span style={{ fontWeight: name === 'Xinyuan Yan' ? '500' : '300',
-                    color: name === 'Xinyuan Yan' ?  grey[800]: grey[600]
-                  }}>
-                    {name}
-                  </span>
-                 {index !== paper['authors'].length - 1 && ', '}
-              </span>
-                ))}
-              </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[800], fontSize: '0.9em', fontStyle: 'italic'}} >
-                {paper['place']}
-              </Typography>
-              <Typography variant="body1" sx={{ fontWeight: 300, color: grey[800], fontSize: '0.8em' }}>
-                {paper['link'] && <Link sx={{ fontWeight: 200 }} href={paper['link']}>paper</Link>}
-                {paper['supplement'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['supplement']}>supplement</Link></span>}
-                {paper['arXiv'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['arXiv']}>arXiv</Link></span>}
-                {paper['code'] && <span> | <Link sx={{ fontWeight: 200 }} href={paper['code']}>code</Link></span>} 
-              </Typography>
-              </div>
-            )
-          })
-        }
-      </div>
-      </div>
-
-      {/* The POSTERS  */}
-      <div className='subsection'>
-      <Typography variant="h5" gutterBottom sx={{fontWeight:200}}>
-        Posters
-      </Typography>
-      <SeparationLine></SeparationLine>
-      <div>
-      {
-          poster_lst.map((paper, index)=>{
-            return(
-              <div className='paperslot'>
-              <Typography variant="subtitle1"> 
-                {paper['title']}  <Link sx={{fontWeight: 200}} href={paper['link']}>[pdf]</Link>
-              </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[600], fontSize: '0.9em'}}>
-                {paper['authors'].map((name, index)=>(
-                  <span key={index}>
-                  <span style={{ fontWeight: name === 'Xinyuan Yan' ? '500' : '300',
-                    color: name === 'Xinyuan Yan' ?  grey[800]: grey[600]
-                  }}>
-                    {name}
-                  </span>
-                 {index !== paper['authors'].length - 1 && ', '}
-              </span>
-                ))}
-              </Typography>
-              <Typography variant="body1" sx={{fontWeight: 300, color: grey[800], fontSize: '0.9em', fontStyle: 'italic'}} >
-                {paper['place']}
-                {paper['award'] && <span style={{fontWeight: 400, color:orange[500]}}>{` ${paper['award']}`}</span>}
-              </Typography>
-              </div>
-            )
-          })
-        }
-      </div>
-      </div>
-
-      <div className='subsection'>
-      <Typography variant="h5" gutterBottom sx={{fontWeight: 200}}>
-        Professional Experiences
-      </Typography> 
-      <SeparationLine></SeparationLine>
-      <div style={{height: '15px'}}></div>
-
-
-      <Typography variant="body1" gutterBottom >
-      Research Assistant, SCI Institute, University of Utah  						 
-      <span style={{marginLeft: '30px'}}>01/2022 – present</span>
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-      Research Intern, Bosch Research, Sunnyvale, California, United States  
-      <span style={{marginLeft: '30px'}}>05/2023 – 08/2023 </span>
-      </Typography>
-      </div>
-
-      <div className='subsection'> 
-      <Typography variant="h5" gutterBottom sx={{fontWeight: 200}}>
-        Teaching
-      </Typography>
-      <SeparationLine></SeparationLine>
-      <div style={{height: '15px'}}></div>
-
-      
-      <Typography variant="body1" gutterBottom >
-       Guest Lecturer, CS 3090: Ethics in Computing, 2025 Spring, University of Utah, lectured by Prof. Noelle Brown.
-      </Typography>
-      <Typography variant="body1" gutterBottom >
-        TA, CS 3960 Algorithm Fairness in Machine Learning, 2023 Spring, University of Utah, lectured by Prof. Bei Wang Philips.
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        TA, CS 3190 Foundations of Data Analysis, 2022 Fall, University of Utah, lectured by Prof. Jeff Philips.
-      </Typography>
-      </div>
-    </Box>
+        
+        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        Guest Lecturer, CS 3090: Ethics in Computing, 2025 Spring, University of Utah, lectured by Prof. Noelle Brown.
+        </Typography>
+        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+          TA, CS 3960 Algorithm Fairness in Machine Learning, 2023 Spring, University of Utah, lectured by Prof. Bei Wang Philips.
+        </Typography>
+        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+          TA, CS 3190 Foundations of Data Analysis, 2022 Fall, University of Utah, lectured by Prof. Jeff Philips.
+        </Typography>
+        </div>
+      </Box>
+    </ThemeProvider>
   );
 }
 
