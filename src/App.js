@@ -266,7 +266,7 @@ function App() {
         <span style={{marginLeft: '30px'}}>08/2025 – 09/2025 </span>
         </Typography>
         <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
-        Research Intern, , Sunnyvale, California, United States  
+        Research Intern, Sunnyvale, California, United States  
         <span style={{marginLeft: '30px'}}>05/2023 – 08/2023 </span>
         </Typography>
         </div>
