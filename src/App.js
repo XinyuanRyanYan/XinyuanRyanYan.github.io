@@ -52,8 +52,8 @@ function SeparationLine() {
 const pub_lst = [
   {
     'title': 'Visual Exploration of Feature Relationships in Sparse Autoencoders with Curated Concepts',
-    'authors': ['Xinyuan Yan', 'Kowshik Thopalli', 'Shusen Liu', 'Bei Wang'],
-    'place': 'Mechanistic Interpretability Workshop at NeurIPS 2025'
+    'authors': ['Xinyuan Yan', 'Shusen Liu', 'Kowshik Thopalli', 'Bei Wang'],
+    'place': 'Mechanistic Interpretability Workshop at NeurIPS, 2025'
   },
   {
     'title': 'VISLIX: An XAI Framework for Validating Vision Models with Slice Discovery and Analysis.',
@@ -131,8 +131,8 @@ function App() {
           <Typography variant="body1" gutterBottom sx={{fontWeight: 300, fontSize: '1.15em'}}>
           Hello! I’m Xinyuan Yan (闫心愿), a fifth-year PhD student at the <Link href={"https://www.sci.utah.edu/"}>SCI Institute</Link>, University of Utah, 
           advised by <Link href={"https://www.sci.utah.edu/~beiwang/"}>Prof. Bei Wang Phillips</Link>. 
-          My research interests focus on the fairness, explainability, and interpretability of AI models.
-          I develop human-centered visual analytics and topology-driven methods to explain, validate, and explore AI systems across domains, aiming to foster responsible and interpretable AI.
+          My research interests focus on the fairness, explainability, and interpretability of AI models across modalities.
+          I aim to advance this field through developing human-centered visual analytics and Topological Data Analysis (TDA) techniques. 
           I also conduct research around hypergraph visualization.
           </Typography>
 
@@ -194,7 +194,7 @@ function App() {
                   ))}
                 </Typography>
                 <Typography variant="body1" sx={{fontWeight: 300, color: grey[800], fontStyle: 'italic'}} >
-                  {paper['place']}ç
+                  {paper['place']}
                 </Typography>
                 <Typography variant="body1" sx={{ fontWeight: 300, color: grey[800], fontSize: '0.9em' }}>
                   {paper['link'] && <Link sx={{ fontWeight: 200 }} href={paper['link']}>paper</Link>}
@@ -266,7 +266,7 @@ function App() {
         <span style={{marginLeft: '30px'}}>08/2025 – 09/2025 </span>
         </Typography>
         <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
-        Research Intern, Bosch Research, Sunnyvale, California, United States  
+        Research Intern, , Sunnyvale, California, United States  
         <span style={{marginLeft: '30px'}}>05/2023 – 08/2023 </span>
         </Typography>
         </div>
@@ -278,7 +278,9 @@ function App() {
         <SeparationLine></SeparationLine>
         <div style={{height: '15px'}}></div>
 
-        
+        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        Guest Lecturer, CS 3090: Ethics in Computing, 2025 Fall, University of Utah, lectured by Prof. Bei Wang Philips.
+        </Typography>
         <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
         Guest Lecturer, CS 3090: Ethics in Computing, 2025 Spring, University of Utah, lectured by Prof. Noelle Brown.
         </Typography>
