@@ -53,7 +53,9 @@ const pub_lst = [
   {
     'title': 'Visual Exploration of Feature Relationships in Sparse Autoencoders with Curated Concepts',
     'authors': ['Xinyuan Yan', 'Shusen Liu', 'Kowshik Thopalli', 'Bei Wang'],
-    'place': 'Mechanistic Interpretability Workshop at NeurIPS, 2025'
+    'place': 'Mechanistic Interpretability Workshop at NeurIPS, 2025',
+    'code': 'https://github.com/tdavislab/SAEExploration.git',
+    'link': 'https://openreview.net/pdf?id=rOoMnHqDNk'
   },
   {
     'title': 'VISLIX: An XAI Framework for Validating Vision Models with Slice Discovery and Analysis.',
