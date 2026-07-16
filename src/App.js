@@ -4,7 +4,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import myPhoto from './Xinyuan.JPG'; // Adjust the path as necessary
-import { grey, orange } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
 import Link from '@mui/material/Link';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -51,11 +51,26 @@ function SeparationLine() {
 
 const pub_lst = [
   {
-    'title': 'Visual Exploration of Feature Relationships in Sparse Autoencoders with Curated Concepts',
+    'title': 'Explainable Mapper: Charting LLM Embedding Spaces Using Perturbation-Based Exploration, Explanation, and Verification Agents.',
+    'authors': ['Xinyuan Yan', 'Rita Sevastjanova', 'Sinie van der Ben', 'Mennatallah El-Assady', 'Bei Wang'],
+    'place': 'IEEE Visualization Conference (VIS), 2026.',
+    'link': '/explainable-mapper/VIS2026_Explainable_Mapper_full_paper.pdf',
+    'supplement': '/explainable-mapper/VIS2026_Explainable_Mapper_Appendix.pdf',
+    'video': '/explainable-mapper/explainer-mapper.mp4'
+  },
+  {
+    'title': 'Teaching People LLM\'s Errors and Getting it Right.',
+    'authors': ['Nathan Stringham', 'Fateme Hashemi Chaleshtori', 'Xinyuan Yan', 'Zhichao Xu', 'Bei Wang', 'Ana Marasovic'],
+    'place': '6th Workshop on Trustworthy Natural Language Processing (TrustNLP), colocated with the 2026 Annual Conference of the Association for Computational Linguistics (ACL), 2026.',
+    'link': 'https://www.arxiv.org/pdf/2512.21422' 
+  },
+  {
+    'title': 'Visual Exploration of Feature Relationships in Sparse Autoencoders with Curated Concepts.',
     'authors': ['Xinyuan Yan', 'Shusen Liu', 'Kowshik Thopalli', 'Bei Wang'],
     'place': 'Mechanistic Interpretability Workshop at NeurIPS, 2025',
     'code': 'https://github.com/tdavislab/SAEExploration.git',
-    'link': 'https://openreview.net/pdf?id=rOoMnHqDNk'
+    'link': 'https://arxiv.org/pdf/2511.06048',
+    'video': '/SAE-Explorer-demo.mp4'
   },
   {
     'title': 'VISLIX: An XAI Framework for Validating Vision Models with Slice Discovery and Analysis.',
@@ -102,6 +117,21 @@ const pub_lst = [
   }
 ];
 
+const preprint_lst = [
+  {
+    'title': 'TopoAlign: Topology-Aware Visual Representation Alignment.',
+    'authors': ['Xinyuan Yan', 'Rita Sevastjanova', 'Mennatallah El-Assady', 'Bei Wang'],
+    'link': 'https://arxiv.org/pdf/2605.25541',
+    'year': 2026
+  },
+  {
+    'title': 'See or Recall: A Sanity Check for the Role of Vision in Solving Visualization Question Answer Tasks with Multimodal LLMs.',
+    'authors': ['Zhimin Li', 'Haichao Miao', 'Xinyuan Yan', 'Valerio Pascucci', 'Matthew Berger', 'Shusen Liu'],
+    'link': 'https://arxiv.org/pdf/2504.09809',
+    'year': 2025
+  }
+];
+
 const poster_lst = [
   {'title': 'Turing Galaxy: Visualizing Turing Award Laureates',
     'authors': ['Xinyuan Yan', 'Yifang Ma'],
@@ -112,7 +142,7 @@ const poster_lst = [
   {'title': 'Elastic Tree Layouts for Interactive Exploration of Mentorship',
     'authors': ['Xinyuan Yan', 'Yifang Ma'],
     'place': 'EuroVis 2021',
-    'link': 'https://diglib.eg.org/items/4d3b3c84-7e08-4f7f-89e2-5ae7921fd2a2',
+    'link': '/Elastic%20Tree%20Layouts%20for%20Interactive%20Exploration%20of%20Mentorship.pdf',
     'award': 'Best Poster Award'
   }
 ]
@@ -133,21 +163,21 @@ function App() {
           <Typography variant="body1" gutterBottom sx={{fontWeight: 300, fontSize: '1.15em'}}>
           Hello! I’m Xinyuan Yan (闫心愿), a fifth-year PhD student at the <Link href={"https://www.sci.utah.edu/"}>SCI Institute</Link>, University of Utah, 
           advised by <Link href={"https://www.sci.utah.edu/~beiwang/"}>Prof. Bei Wang Phillips</Link>. 
-          My research interests focus on the fairness, explainability, and interpretability of AI models across modalities.
-          I aim to advance this field through developing human-centered visual analytics and Topological Data Analysis (TDA) techniques. 
-          I also conduct research around hypergraph visualization.
+          My research interests focus on the fairness, explainability, and interpretability of AI systems.
+          I aim to advance these areas through the development of human-centered visual analytics, Topological Data Analysis (TDA), and agentic AI techniques.
           </Typography>
 
           <Typography variant="body1" sx={{fontWeight: 300, fontFamily: 'EB Garamond', fontSize: '1.15em'}}>
-          Before pursuing my PhD, I obtained my bachelor's degree in Computer Science from Shandong University in 2019. 
-          Outside of research, I enjoy reading and watching movies. My recently favorite book is <em>On the Move: A Life</em> by Oliver Sacks.
+          Before pursuing my PhD, I obtained my bachelor's degree in Computer Science from Shandong University. 
+          Outside of research, I enjoy reading and watching movies. My recently favorite book is <em>Why Fish Don't Exist</em> by Lulu Miller.
           </Typography>
 
           <Typography variant="body2" sx={{fontWeight: 400, paddingTop: '10px'}}>
           <StyledLinks sx={{fontWeight: 200, margin: '0 10px 0 0', fontSize: '1.15em'}} href='https://scholar.google.com/citations?user=zVBCLa8AAAAJ&hl=en'>Google Scholar</StyledLinks> | 
           <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='https://github.com/XinyuanRyanYan'>Github</StyledLinks> |
           <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='https://www.linkedin.com/in/xinyuan-yan-990b681b9/'>LinkedIn</StyledLinks> |
-          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='mailto:xyan@cs.utah.edu'>Email</StyledLinks>
+          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='mailto:xyan@cs.utah.edu'>Email</StyledLinks> |
+          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='/CV.pdf'>CV</StyledLinks>
           </Typography>
           </div>
 
@@ -168,6 +198,41 @@ function App() {
           [To be announced]
         </Typography>
         </div> */}
+
+        {/* The PREPRINTS  */}
+        <div className='subsection'>
+        <Typography variant="h5" gutterBottom sx={{fontWeight:200}}>
+          Preprints
+        </Typography>
+        <SeparationLine></SeparationLine>
+        <div>
+        {
+            preprint_lst.map((paper)=>{
+              return(
+                <div className='paperslot'>
+                <Typography variant="subtitle1" sx={{fontSize: '1.15em'}}>
+                  {paper['title']}
+                </Typography>
+                <Typography variant="body1" sx={{fontWeight: 300, color: grey[600]}}>
+                  {paper['authors'].map((name, index)=>(
+                    <span key={index}>
+                    <span style={{ fontWeight: name === 'Xinyuan Yan' ? '500' : '300',
+                      color: name === 'Xinyuan Yan' ?  grey[800]: grey[600]
+                    }}>
+                      {name}
+                    </span>
+                  {index !== paper['authors'].length - 1 && ', '}
+                </span>
+                  ))}
+                  <span style={{fontStyle: 'italic', color: grey[800]}}>. {paper['status'] || 'Under submission'}, {paper['year']}.</span>
+                  {paper['link'] && <span> <Link sx={{ fontWeight: 200 }} href={paper['link']}>arXiv</Link></span>}
+                </Typography>
+                </div>
+              )
+            })
+          }
+        </div>
+        </div>
 
         {/* The PUBLICATIONS  */}
         <div className='subsection'>
@@ -268,7 +333,7 @@ function App() {
         <span style={{marginLeft: '30px'}}>08/2025 – 09/2025 </span>
         </Typography>
         <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
-        Research Intern, Sunnyvale, California, United States  
+        Research Intern, Bosch Research, Sunnyvale, California, United States  
         <span style={{marginLeft: '30px'}}>05/2023 – 08/2023 </span>
         </Typography>
         </div>
