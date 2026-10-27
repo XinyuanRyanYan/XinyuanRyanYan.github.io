@@ -53,10 +53,16 @@ const pub_lst = [
   {
     'title': 'Explainable Mapper: Charting LLM Embedding Spaces Using Perturbation-Based Exploration, Explanation, and Verification Agents.',
     'authors': ['Xinyuan Yan', 'Rita Sevastjanova', 'Sinie van der Ben', 'Mennatallah El-Assady', 'Bei Wang'],
-    'place': 'IEEE Visualization Conference (VIS), 2026.',
-    'link': '/explainable-mapper/VIS2026_Explainable_Mapper_full_paper.pdf',
-    'supplement': '/explainable-mapper/VIS2026_Explainable_Mapper_Appendix.pdf',
+    'place': 'IEEE Transactions on Visualization and Computer Graphics (Proceedings of the IEEE VIS 2026)',
+    'link': 'https://www.sci.utah.edu/~beiwang/publications/Explainable_Mapper_BeiWang_2026.pdf',
+    'supplement': 'https://www.sci.utah.edu/~beiwang/publications/Explainable_Mapper_Supplement_BeiWang_2026.pdf',
     'video': '/explainable-mapper/explainer-mapper.mp4'
+  },
+  {
+    'title': 'LoCoMapper: Local Structural Uncertainty Analysis of Mapper Graphs under Cover Perturbations.',
+    'authors': ['Xinyuan Yan', 'Jixian Li', 'Bei Wang'],
+    'place': 'IEEE VIS Workshop on Uncertainty Visualization, 2026',
+    'link': 'https://www.sci.utah.edu/~beiwang/publications/LoCoMapper_BeiWang_2026.pdf',
   },
   {
     'title': 'Teaching People LLM\'s Errors and Getting it Right.',
@@ -147,57 +153,117 @@ const poster_lst = [
   }
 ]
 
+const news_lst = [
+  {
+    'date': 'October 2026',
+    'content': (
+      <>
+        Started as a{' '}
+        <Link href="https://rai.utah.edu/">One-U Responsible AI Initiative</Link>
+        {' '}Postdoctoral Fellow at the{' '}
+        <Link href="https://www.sci.utah.edu/">SCI Institute</Link>, University of Utah!
+      </>
+    )
+  },
+  {
+    'date': 'September 2026',
+    'content': (
+      <>
+        PhD defense complete! 🎓 Grateful to my advisor, committee, and collaborators! 🎉
+      </>
+    )
+  },
+  {
+    'date': 'July 2026',
+    'content': (
+      <>
+        Attended Graph Methods in TDA 2026 at Michigan State University and delivered two invited talks on{' '}
+        <Link href="https://www.sci.utah.edu/~beiwang/publications/Explainable_Mapper_BeiWang_2026.pdf">Explainable Mapper</Link>
+        {' '}and{' '}
+        <Link href="https://arxiv.org/pdf/2605.25541">TopoAlign</Link>.
+      </>
+    )
+  }
+]
+
 
 function App() { 
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ width: '100%', maxWidth: 900 }}> 
-        <Typography variant="h3" gutterBottom sx={{fontWeight: 200, fontSize: '2.7em'}}>
+      <Box className='page-container'> 
+        <Typography variant="h3" gutterBottom sx={{
+          fontWeight: 200,
+          fontSize: { xs: '2.1em', sm: '2.4em', md: '2.7em' },
+          lineHeight: 1.2,
+        }}>
           Xinyuan Yan
         </Typography>
         <SeparationLine></SeparationLine>
 
         <div id='intro-image-div'>
           <div>
-          <Typography variant="body1" gutterBottom sx={{fontWeight: 300, fontSize: '1.15em'}}>
-          Hello! I’m Xinyuan Yan (闫心愿), a fifth-year PhD student at the <Link href={"https://www.sci.utah.edu/"}>SCI Institute</Link>, University of Utah, 
-          advised by <Link href={"https://www.sci.utah.edu/~beiwang/"}>Prof. Bei Wang Phillips</Link>. 
-          My research interests focus on the fairness, explainability, and interpretability of AI systems.
-          I aim to advance these areas through the development of human-centered visual analytics, Topological Data Analysis (TDA), and agentic AI techniques.
+          <Typography variant="body1" gutterBottom sx={{fontWeight: 300, fontSize: { xs: '1.05em', sm: '1.15em' }}}>
+          Hello! I’m Xinyuan Yan (闫心愿), a <Link href={"https://rai.utah.edu/"}>One-U Responsible AI Initiative</Link> Postdoctoral Fellow at the <Link href={"https://www.sci.utah.edu/"}>SCI Institute</Link>, University of Utah,
+          advised by <Link href={"https://amarasovic.github.io/"}>Prof. Ana Marasović</Link> and <Link href={"https://eccles.utah.edu/team/arul-mishra/"}>Prof. Arul Mishra</Link>.
+          My research lies at the intersection of visualization, topological data analysis (TDA), and explainable AI. I develop visual analytics methods that help people understand, diagnose, and improve AI model behavior by examining both internal mechanisms, such as learned representation spaces, and external behavior, such as model outputs.
           </Typography>
 
-          <Typography variant="body1" sx={{fontWeight: 300, fontFamily: 'EB Garamond', fontSize: '1.15em'}}>
-          Before pursuing my PhD, I obtained my bachelor's degree in Computer Science from Shandong University. 
+          <Typography variant="body1" sx={{fontWeight: 300, fontFamily: 'EB Garamond', fontSize: { xs: '1.05em', sm: '1.15em' }}}>
+          Previously, I received my PhD in Computer Science from the <Link href={"https://sci.utah.edu/"}>SCI Institute</Link>, the University of Utah, advised by <Link href={"https://www.sci.utah.edu/~beiwang/"}>Prof. Bei Wang Phillips</Link>.
+          Before pursuing my PhD, I obtained my bachelor's degree in Computer Science from Shandong University.
           Outside of research, I enjoy reading and watching movies. My recently favorite book is <em>Why Fish Don't Exist</em> by Lulu Miller.
           </Typography>
 
-          <Typography variant="body2" sx={{fontWeight: 400, paddingTop: '10px'}}>
-          <StyledLinks sx={{fontWeight: 200, margin: '0 10px 0 0', fontSize: '1.15em'}} href='https://scholar.google.com/citations?user=zVBCLa8AAAAJ&hl=en'>Google Scholar</StyledLinks> | 
-          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='https://github.com/XinyuanRyanYan'>Github</StyledLinks> |
-          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='https://www.linkedin.com/in/xinyuan-yan-990b681b9/'>LinkedIn</StyledLinks> |
-          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='mailto:xyan@cs.utah.edu'>Email</StyledLinks> |
-          <StyledLinks sx={{fontWeight: 200, margin: '0 10px', fontSize: '1.15em'}} href='/CV.pdf'>CV</StyledLinks>
+          <Typography variant="body2" sx={{
+            fontWeight: 400,
+            paddingTop: '10px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            columnGap: '8px',
+            rowGap: '4px',
+          }}>
+          <StyledLinks sx={{fontWeight: 200, fontSize: { xs: '1.05em', sm: '1.15em' }}} href='https://scholar.google.com/citations?user=zVBCLa8AAAAJ&hl=en'>Google Scholar</StyledLinks>
+          <span>|</span>
+          <StyledLinks sx={{fontWeight: 200, fontSize: { xs: '1.05em', sm: '1.15em' }}} href='https://github.com/XinyuanRyanYan'>Github</StyledLinks>
+          <span>|</span>
+          <StyledLinks sx={{fontWeight: 200, fontSize: { xs: '1.05em', sm: '1.15em' }}} href='https://www.linkedin.com/in/xinyuan-yan-990b681b9/'>LinkedIn</StyledLinks>
+          <span>|</span>
+          <StyledLinks sx={{fontWeight: 200, fontSize: { xs: '1.05em', sm: '1.15em' }}} href='mailto:xyan@cs.utah.edu'>Email</StyledLinks>
+          <span>|</span>
+          <StyledLinks sx={{fontWeight: 200, fontSize: { xs: '1.05em', sm: '1.15em' }}} href='/CV.pdf'>CV</StyledLinks>
           </Typography>
           </div>
 
           <div>
             <img 
+              className='profile-photo'
               src={myPhoto} 
               alt="Xinyuan Yan" 
-              style={{ width: '170px', borderRadius: '50%' , border: '2px solid #e9e8e4'}} // Adjust the size and style as needed #e9e8e4
             />
             </div>
         </div>
 
-        {/* <div className='subsection'>
-        <Typography variant="h4" gutterBottom sx={{fontWeight: 300}}>
+        {/* The NEWS  */}
+        <div className='subsection'>
+        <Typography variant="h5" gutterBottom sx={{fontWeight:200}}>
           News
         </Typography>
-        <Typography variant="subtitle1" gutterBottom sx={{color: grey[600]}}>
-          [To be announced]
-        </Typography>
-        </div> */}
+        <SeparationLine></SeparationLine>
+        <div className='news-list'>
+        {
+          news_lst.map((item, index)=>(
+            <div className='news-item' key={index}>
+              <span className='news-date'>{item['date']}</span>
+              <Typography variant="body1" className='news-text' sx={{fontWeight: 300, fontSize: { xs: '0.95em', sm: '1em' }}}>
+                {item['content']}
+              </Typography>
+            </div>
+          ))
+        }
+        </div>
+        </div>
 
         {/* The PREPRINTS  */}
         <div className='subsection'>
@@ -324,17 +390,17 @@ function App() {
         <div style={{height: '15px'}}></div>
 
 
-        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
-        Research Assistant, SCI Institute, University of Utah  						 
-        <span style={{marginLeft: '30px'}}>01/2022 – present</span>
+        <Typography variant="body1" gutterBottom className='experience-row' sx={{fontSize: { xs: '1.05em', sm: '1.15em' }}}>
+        <span>Research Assistant, SCI Institute, University of Utah</span>
+        <span className='experience-dates'>01/2022 – present</span>
         </Typography>
-        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
-        Visiting Student, IVIA Lab, ETH Zurich, Switzerland
-        <span style={{marginLeft: '30px'}}>08/2025 – 09/2025 </span>
+        <Typography variant="body1" gutterBottom className='experience-row' sx={{fontSize: { xs: '1.05em', sm: '1.15em' }}}>
+        <span>Visiting Student, IVIA Lab, ETH Zurich, Switzerland</span>
+        <span className='experience-dates'>08/2025 – 09/2025</span>
         </Typography>
-        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
-        Research Intern, Bosch Research, Sunnyvale, California, United States  
-        <span style={{marginLeft: '30px'}}>05/2023 – 08/2023 </span>
+        <Typography variant="body1" gutterBottom className='experience-row' sx={{fontSize: { xs: '1.05em', sm: '1.15em' }}}>
+        <span>Research Intern, Bosch Research, Sunnyvale, California, United States</span>
+        <span className='experience-dates'>05/2023 – 08/2023</span>
         </Typography>
         </div>
 
@@ -345,16 +411,16 @@ function App() {
         <SeparationLine></SeparationLine>
         <div style={{height: '15px'}}></div>
 
-        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        <Typography variant="body1" gutterBottom sx={{fontSize: { xs: '1.05em', sm: '1.15em' }}}>
         Guest Lecturer, CS 3090: Ethics in Computing, 2025 Fall, University of Utah, lectured by Prof. Bei Wang Philips.
         </Typography>
-        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        <Typography variant="body1" gutterBottom sx={{fontSize: { xs: '1.05em', sm: '1.15em' }}}>
         Guest Lecturer, CS 3090: Ethics in Computing, 2025 Spring, University of Utah, lectured by Prof. Noelle Brown.
         </Typography>
-        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        <Typography variant="body1" gutterBottom sx={{fontSize: { xs: '1.05em', sm: '1.15em' }}}>
           TA, CS 3960 Algorithm Fairness in Machine Learning, 2023 Spring, University of Utah, lectured by Prof. Bei Wang Philips.
         </Typography>
-        <Typography variant="body1" gutterBottom sx={{fontSize: '1.15em'}}>
+        <Typography variant="body1" gutterBottom sx={{fontSize: { xs: '1.05em', sm: '1.15em' }}}>
           TA, CS 3190 Foundations of Data Analysis, 2022 Fall, University of Utah, lectured by Prof. Jeff Philips.
         </Typography>
         </div>
